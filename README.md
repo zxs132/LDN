@@ -21,3 +21,9 @@ Imports: reshape, dplyr, ranger, igraph, visNetwork, ztable, grDevices
 License: GPL-2
 
 URL: https://github.com/zxs132/LDN
+
+## Installation
+
+```
+devtools::install_github("zxs132/LDN")
+```
