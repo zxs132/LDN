@@ -1,6 +1,6 @@
 #' @export
 
-#' Title Run random forest models to find significant predictive relationships
+#' @title Run random forest models to find significant predictive relationships
 #'
 #' @param data_list A list containing data and its attributes (preferably from data_reshape())
 #'
@@ -8,16 +8,17 @@
 #' @export
 #'
 #' @examples
+#' ia_test2 <- compute_test(ia_test1)
 compute_test <- function(data_list){
   vars <- data_list[["data"]][[length(data_list[["data"]])]] %>% colnames
   n <- length(vars)
   years <- as.character(sort(unique(data_list[["year"]])))
-  
+
   # Create empty matrices for p values, optimized number of trees, and MDG
   alt_p <- array(dim = c(n, n), dimnames = list(vars, vars))
   num_tree <- array(dim = c(n, n), dimnames = list(vars, vars))
   mdg <- array(dim = c(n, n), dimnames = list(vars, vars))
-  
+
   # Discover target variables for each year
   target_list <- list()
   for(i in 1:length(years)){
@@ -31,7 +32,7 @@ compute_test <- function(data_list){
       num_tree[names(results$alt), name] <- results$ntree.best
       mdg[names(results$alt), name] <- results$mdg
     }
-  }  
+  }
   return(list(data = data_list[["data"]],
               alt_p = alt_p,
               num_tree = num_tree,

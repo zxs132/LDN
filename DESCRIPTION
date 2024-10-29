@@ -13,3 +13,4 @@ Encoding: UTF-8
 Needscompilation: no
 Depends: R(>= 3.4.1)
 Imports: reshape, dplyr, ranger, igraph, visNetwork, ztable, grDevices
+RoxygenNote: 7.3.2
