@@ -1,4 +1,4 @@
-#' @export
+#' @export visualize
 #'
 #' @title Network visualization for predictie relationships
 #'

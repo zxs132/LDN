@@ -1,4 +1,4 @@
-#' @export
+#' @export data_reshape
 
 ########## Reshaping data set ##########
 

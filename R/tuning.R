@@ -1,4 +1,4 @@
-#' @export
+#' @export tuning
 
 ########## Tuning RFs ##########
 

@@ -1,4 +1,4 @@
-#' @export
+#' @export compute_test
 
 #' @title Run random forest models to find significant predictive relationships
 #'
