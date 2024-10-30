@@ -27,3 +27,8 @@ color_brewer <- RColorBrewer::brewer.pal(8, "Pastel1")
 
 visualize(ia_test2, color = color_brewer[1:3])
 }
+\references{
+\itemize{
+\item Heckerman D, Chickering DM, Meek C, Rounthwaite R, Kadie C. Dependency networks for inference, collaborative filtering, and data visualization. J Mach Learn Res. 2000;1:49-75.
+}
+}

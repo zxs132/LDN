@@ -13,7 +13,10 @@
 #' @param size Node and text size for graph and its legend
 #' @param color A character vector to distinguish each year in the data (length: number of measurements)
 #'
-#'
+#' @references
+#' \itemize{
+#' \item Heckerman D, Chickering DM, Meek C, Rounthwaite R, Kadie C. Dependency networks for inference, collaborative filtering, and data visualization. J Mach Learn Res. 2000;1:49-75.
+#' }
 #'
 #' @export
 #'
