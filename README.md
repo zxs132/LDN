@@ -27,3 +27,14 @@ URL: https://github.com/zxs132/LDN
 ```
 devtools::install_github("zxs132/LDN")
 ```
+
+## Example
+
+```
+library(LDN)
+test_data <- read.csv("test_data.csv")
+test1 <- data_reshape(test_data)
+test2 <- compute_test(test1) # Takes time...
+visualize(test2)
+```
+
