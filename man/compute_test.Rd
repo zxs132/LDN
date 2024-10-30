@@ -13,7 +13,7 @@ compute_test(data_list)
 A list containing results of random forest model (MDG, p-value, optimized number of trees, etc)
 }
 \description{
-Run random forest models to find significant predictive relationships
+This funciton organizes the data and computes mean decrease in Gini (MDG) and associated p-values.
 }
 \examples{
 

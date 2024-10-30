@@ -2,6 +2,10 @@
 
 #' @title Run random forest models to find significant predictive relationships
 #'
+#' @description
+#' This funciton organizes the data and computes mean decrease in Gini (MDG) and associated p-values.
+#'
+#'
 #' @param data_list A list containing data and its attributes (preferably from data_reshape())
 #'
 #' @return A list containing results of random forest model (MDG, p-value, optimized number of trees, etc)

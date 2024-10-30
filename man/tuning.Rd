@@ -17,5 +17,5 @@ tuning(data, target, num_permutation)
 A list containing results of tuning process
 }
 \description{
-Tuning random forest
+This function tunes random forest models by first calculating optimal number of trees for each model and finding mean decrease in Gini (MDG) representing importance of one variable in predicting another.
 }

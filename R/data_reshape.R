@@ -2,7 +2,12 @@
 
 ########## Reshaping data set ##########
 
-#' @title  Data reshaping for the analysis
+#' @title  Data reshaping for longitudinal dependency network
+#'
+#' @description
+#' This function reshapes the longitudinal data into long form. We suggest the input data to be wide form. We considered time dependent and independent variables and organized variables for each year.
+#'
+#'
 #'
 #' @param data A wide format dataframe containing panel data
 #' @param time_dep A string of time dependent variables

@@ -2,6 +2,10 @@
 #'
 #' @title Network visualization for predictie relationships
 #'
+#' @description
+#' This function is designed to visualize predictive relationships between study variables with directed and bi-directed edges. Nodes represent study variables, and edges represent significant predictive relationships.
+#'
+#'
 #' @param data A list to visualize the results (preferably from compute_test())
 #' @param edge_width Width of edge in the graph
 #' @param cutoff A cutoff for significance
@@ -69,8 +73,8 @@ visualize <- function(data, edge_width = 2, cutoff = 0.05, shape = "dot", size =
       x_ind <- x_ind + 2
     }
   }
-  V(n)$group <- rep(as.character(1:(length(table_year))), c(unlist(lapply(vl_list, length))))
-  E(n)$width <- edge_width
+  igraph::V(n)$group <- rep(as.character(1:(length(table_year))), c(unlist(lapply(vl_list, length))))
+  igraph::E(n)$width <- edge_width
 
   layout <- cbind(x, y)
   color <- color
@@ -83,18 +87,18 @@ visualize <- function(data, edge_width = 2, cutoff = 0.05, shape = "dot", size =
 
   plot <- visNetwork::visIgraph(n, idToLabel = F) %>%
 
-    visIgraphLayout(layout = "layout.norm", layoutMatrix = layout) %>%
+    visNetwork::visIgraphLayout(layout = "layout.norm", layoutMatrix = layout) %>%
 
-    visEdges(shadow = T) %>%
+    visNetwork::visEdges(shadow = T) %>%
 
-    visNodes(shadow = T, font = list(size = size*2)) %>%
+    visNetwork::visNodes(shadow = T, font = list(size = size*2)) %>%
 
-    visLegend(useGroups = F, addNodes = legend, stepX = 185, position = "right", width = .335)
+    visNetwork::visLegend(useGroups = F, addNodes = legend, stepX = 185, position = "right", width = .335)
 
   tables <- table(V(n)$group)
   for(i in 1:length(tables)){
     plot <- plot %>%
-      visGroups(groupname = names(tables[i]), color = color[i])
+      visNetwork::visGroups(groupname = names(tables[i]), color = color[i])
   }
   plot
 }

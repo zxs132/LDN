@@ -4,6 +4,10 @@
 
 #' @title Tuning random forest
 #'
+#' @description
+#' This function tunes random forest models by first calculating optimal number of trees for each model and finding mean decrease in Gini (MDG) representing importance of one variable in predicting another.
+#'
+#'
 #' @param data A dataframe containing possible predictors from same and preceding blocks
 #' @param target A character representing response variable for random forest model
 #' @param num_permutation A numeric number indicating number of permutation for Altmann's approach
@@ -48,7 +52,7 @@ tuning <- function(data, target, num_permutation) {
 
 
   ## computing impurity importance scores
-  rf_mdg <- ranger(formula = f, data = data,
+  rf_mdg <- ranger::ranger(formula = f, data = data,
                    num.trees = ntree.best,
                    mtry = mtry.best,
                    respect.unordered.factors = "partition",
@@ -59,7 +63,7 @@ tuning <- function(data, target, num_permutation) {
   #computing Altmann's p-values based on the impurity importance scores
 
   set.seed(123)
-  mdg_df <- importance_pvalues(rf_mdg, method = "altmann",
+  mdg_df <- ranger::importance_pvalues(rf_mdg, method = "altmann",
                                num.permutations = num_permutation,
                                formula = f, data = data)
 

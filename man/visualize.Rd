@@ -20,7 +20,7 @@ visualize(data, edge_width = 2, cutoff = 0.05, shape = "dot", size = 12, color)
 \item{color}{A character vector to distinguish each year in the data (length: number of measurements)}
 }
 \description{
-Network visualization for predictie relationships
+This function is designed to visualize predictive relationships between study variables with directed and bi-directed edges. Nodes represent study variables, and edges represent significant predictive relationships.
 }
 \examples{
 color_brewer <- RColorBrewer::brewer.pal(8, "Pastel1")

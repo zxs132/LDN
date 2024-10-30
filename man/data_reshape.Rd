@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_reshape.R
 \name{data_reshape}
 \alias{data_reshape}
-\title{Data reshaping for the analysis}
+\title{Data reshaping for longitudinal dependency network}
 \usage{
 data_reshape(data, time_dep, time_indep, year, id)
 }
@@ -21,11 +21,11 @@ data_reshape(data, time_dep, time_indep, year, id)
 a list containing manipulated data and its attributes
 }
 \description{
-Data reshaping for the analysis
+This function reshapes the longitudinal data into long form. We suggest the input data to be wide form. We considered time dependent and independent variables and organized variables for each year.
 }
 \examples{
 ia_test_data <- read.csv("test_data.csv")
-ia_test1 <- data_reshape(test_data, time_dep = c("mdep", "IA", "smart", "happy", "sleep", "health", "CBCL",
+ia_test1 <- data_reshape(ia_test_data, time_dep = c("mdep", "IA", "smart", "happy", "sleep", "health", "CBCL",
 "family", "income", "empstatus"), time_indep = c("peridep", "gender"), year = "year", id = "N_ID")
 
 }
