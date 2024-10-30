@@ -18,11 +18,12 @@
 #' ia_test1 <- data_reshape(test_data, time_dep = c("mdep", "IA", "smart", "happy", "sleep", "health", "CBCL",
 #' "family", "income", "empstatus"), time_indep = c("peridep", "gender"), year = "year", id = "N_ID")
 #'
-#'
+#' @importFrom dplyr %>%
 #'
 #'
 
 data_reshape <- function(data, time_dep, time_indep, year, id){
+  require(dplyr)
   # data: matrix (long form data)
   # time_dep: character vector of time-dependent variables
   # time_indep: character vector of time-independent variables

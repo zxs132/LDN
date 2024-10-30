@@ -11,6 +11,8 @@
 #' @return A list containing results of tuning process
 #' @export
 #'
+#' @importFrom ranger ranger
+#'
 
 tuning <- function(data, target, num_permutation) {
   # data: matrix
@@ -28,7 +30,7 @@ tuning <- function(data, target, num_permutation) {
 
   for (i in 1:nrow(hyper_grid)) {
 
-    rf <- ranger(formula = f, data = data,
+    rf <- ranger::ranger(formula = f, data = data,
                  num.trees = hyper_grid$ntree[i],
                  mtry = hyper_grid$mvar[i],
                  respect.unordered.factors = "partition",

@@ -16,5 +16,7 @@ A list containing results of random forest model (MDG, p-value, optimized number
 Run random forest models to find significant predictive relationships
 }
 \examples{
+
+#' @importFrom ranger ranger
 ia_test2 <- compute_test(ia_test1)
 }

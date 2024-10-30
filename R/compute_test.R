@@ -8,6 +8,9 @@
 #' @export
 #'
 #' @examples
+#'
+#' #' @importFrom ranger ranger
+
 #' ia_test2 <- compute_test(ia_test1)
 compute_test <- function(data_list){
   vars <- data_list[["data"]][[length(data_list[["data"]])]] %>% colnames
