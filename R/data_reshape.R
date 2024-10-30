@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' ia_test_data <- read.csv("test_data.csv")
-#' ia_test1 <- data_reshape(test_data, time_dep = c("mdep", "IA", "smart", "happy", "sleep", "health", "CBCL",
+#' ia_test1 <- data_reshape(ia_test_data, time_dep = c("mdep", "IA", "smart", "happy", "sleep", "health", "CBCL",
 #' "family", "income", "empstatus"), time_indep = c("peridep", "gender"), year = "year", id = "N_ID")
 #'
 #' @importFrom dplyr %>%
