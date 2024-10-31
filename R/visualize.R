@@ -11,7 +11,7 @@
 #' @param cutoff A cutoff for significance
 #' @param shape A character for shape of nodes in the graph
 #' @param size Node and text size for graph and its legend
-#' @param color A character vector to distinguish each year in the data (length: number of measurements)
+#' @param color A character vector to distinguish each year in the data (length: number of repeated measurements)
 #'
 #' @references
 #' \itemize{
