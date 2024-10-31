@@ -98,7 +98,7 @@ visualize <- function(data, edge_width = 2, cutoff = 0.05, shape = "dot", size =
 
     visNetwork::visLegend(useGroups = F, addNodes = legend, stepX = 185, position = "right", width = .335)
 
-  tables <- table(V(n)$group)
+  tables <- table(igraph::V(n)$group)
   for(i in 1:length(tables)){
     plot <- plot %>%
       visNetwork::visGroups(groupname = names(tables[i]), color = color[i])
