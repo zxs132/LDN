@@ -54,7 +54,7 @@ visualize <- function(data, edge_width = 2, cutoff = 0.05, shape = "dot", size =
     v_list[[i]] <- v[grepl(year_char[i], v)]
     vl_list[[i]] <- unlist(strsplit(v_list[[i]], paste0(".",year_char[i])))
 
-    V(n)[ind:(ind + length(vl_list[[i]]) - 1)]$label <- vl_list[[i]]
+    igraph::V(n)[ind:(ind + length(vl_list[[i]]) - 1)]$label <- vl_list[[i]]
     ind <- ind + length(vl_list[[i]])
 
     if(length(vl_list[[i]]) <= 6){ # More than 6 variables would be separated
